@@ -53,7 +53,29 @@ Il trasmettitore raccoglie i dati via BLE e li pubblica sul broker MQTT. Gli alt
 - Un broker MQTT raggiungibile per l’invio e la ricezione dei dati tramite MQTT.
 - Gli eventuali parametri di autenticazione del broker.
 - La chiave di decrittazione BLE del dispositivo, quando richiesta.
+  
+## Recuperare la chiave Instant Readout da VictronConnect
 
+Per leggere i dati BLE dei dispositivi Victron Energy compatibili, abilita **Instant Readout** e recupera la relativa **chiave di cifratura** tramite l’app ufficiale **VictronConnect**.
+
+1. Apri **VictronConnect** e collegati al dispositivo tramite Bluetooth.
+2. Apri le **Impostazioni** usando l’icona dell’ingranaggio.
+3. Tocca il menu con i **tre puntini** e seleziona **Informazioni prodotto** (*Product info*).
+4. Abilita **Instant readout via Bluetooth**, se non è già attivo.
+5. Nella voce **Instant readout details**, premi **SHOW / Mostra**.
+6. Copia la **chiave di cifratura** (*Encryption key*) e annota l’indirizzo **MAC** visualizzato, per identificare il dispositivo corretto.
+7. Torna all’elenco dispositivi di VictronConnect per terminare la connessione.
+8. Apri **BLU-to-MQTT-BRIDGE**, seleziona il dispositivo rilevato dalla scansione e inserisci la chiave nel campo dedicato.
+
+> **La chiave Instant Readout non è il PIN di associazione Bluetooth.** Usa la chiave appartenente al dispositivo che stai configurando.
+
+### Se l’opzione non compare
+
+La disponibilità di Instant Readout dipende dal modello e dal firmware. Verifica il supporto nella [documentazione ufficiale di VictronConnect](https://www.victronenergy.com/media/pg/VictronConnect_app/en/stored-trends---instant-readout.html) e controlla gli eventuali aggiornamenti disponibili.
+
+I nomi delle voci possono variare in base alla lingua e alla versione dell’app. Il supporto di Instant Readout da parte del dispositivo non garantisce, da solo, che tutti i suoi dati siano gestiti da BLU-to-MQTT-BRIDGE.
+
+> **Proteggi la chiave:** permette di decifrare i dati BLE trasmessi dal dispositivo. Non pubblicarla in screenshot, segnalazioni di problemi o file condivisi.
 ## Prima configurazione
 
 1. **Concedi i permessi richiesti.**  
