@@ -1,4 +1,4 @@
-# BLU-to-MQTT-BRIDGE
+# ANDROID BLU-to-MQTT-BRIDGE
 
 **App Android gratuita per trasformare un telefono in un bridge Bluetooth Low Energy (BLE) → MQTT.**
 
